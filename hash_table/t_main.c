@@ -80,6 +80,7 @@ int main(void)
     */
     srand(time(0));
     int i = 0;
+    //插入100W个数据测试
     for(;i<1000000;i++)
     {
         char * key = random_str(20);
