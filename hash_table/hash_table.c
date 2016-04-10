@@ -209,3 +209,35 @@ int delete_cache_hash_table_item_by_key(CacheHashTable * cache_hash_table_p,cons
     return ERROR_FLH;
     
 }
+
+/*获取key*/
+char * get_key(OutCacheItem *out_cache_item_p)
+{
+    if(!out_cache_item_p)
+    {
+        DEBUG_TRACE("out_cache_item_p is null in get_key");
+        return NULL;
+    }
+    return out_cache_item_p->key_value_buf;
+}
+
+/*获取key*/
+char * get_value(OutCacheItem *out_cache_item_p)
+{
+    if(!out_cache_item_p)
+    {
+        DEBUG_TRACE("out_cache_item_p is null in get_key");
+        return NULL;
+    }
+    return (out_cache_item_p->key_value_buf)+(out_cache_item_p->value_offset);
+}
+
+int get_out_time(OutCacheItem * out_cache_item_p)
+{
+    if(!out_cache_item_p)
+    {
+        DEBUG_TRACE("null in out_cache_item_p");
+        return ERROR_FLH;
+    }
+    return out_cache_item_p->out_time;
+}

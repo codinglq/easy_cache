@@ -43,6 +43,12 @@
 #define MAX_TABLE_CACHE_ITEM_LIST_SIZE 100000
 #define MAX_TABLE_SIZE MAX_TABLE_CACHE_ITEM_LIST_SIZE
 
+/*最大key字节*/
+#define MAX_CACHE_PUT_KEY_SIZE 1*1024*1024
+/*最大value字节*/
+#define MAX_CACHE_PUT_VALUE_SIZE 2*1024*1024
+
+
 /*检查指针，输入指针和空指针时候返回的信息*/
 #define DEBUG_CHECK_POINT(point,msg) if(!point)\
 {\

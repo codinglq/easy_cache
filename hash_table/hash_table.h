@@ -21,9 +21,9 @@ typedef struct out_cache_item
 {
     /*过期时间*/
     int out_time;
-    /*key的偏移量*/
+    /*key基于数组零元素的偏移量，注意，key和value都必须有\0结束*/
     int key_offset;
-    /*value基于key的偏移量*/
+    /*value基于数组零元素的偏移量*/
     int value_offset;
     /*存储key和value的数组*/
     char key_value_buf[0]
@@ -36,7 +36,7 @@ char * random_str(int str_len);
 void prepare_crypt_table();
 
 //散列函数
-unsigned long hash_string(const char *lpszFileName, unsigned long dwHashType);
+unsigned long hash_string(const char *key_p, unsigned long hash_type);
 
 /*获取一个hash table*/
 CacheHashTable * new_cache_hash_table();
