@@ -7,10 +7,11 @@
 
 #include"hash_table.h"
 #include"cache_item.h"
+#define NUM  100
 
 int main(void)
 {
-    printf("xor:%d\n",1^1^2^2^3^3^1);
+    //printf("xor:%d\n",1^1^2^2^3^3^1);
     /*CacheItem * item_p = new_cache_item("0key","abc",1);
     CacheItem * item_p1 = new_cache_item("1key","bcd",10);
     CacheItem * item_p2 = new_cache_item("2key","dsads",10);
@@ -52,9 +53,23 @@ int main(void)
 
     printf("%d\n",res);
     */
+	/*测试hash均匀性*/
+	int k = 0;
+	srand(time(0));
+	int count_arr[NUM]={};
+	for(;k<1000000;k++)
+	{
+		char *str = random_str(15);
+		unsigned long hash_0 = hash_string(str,HASH_2)%NUM;
+		count_arr[hash_0]++;
+		free(str);
+	}
 
-
-    CacheHashTable * hashTable = new_cache_hash_table();
+	for(k=0;k<NUM;k++)
+	{
+		printf("numbers:%d\n",count_arr[k]);
+	}
+	return 0;
     /*
     unsigned long res = put_cache_hash_table(hashTable,"9","lqqa",10);
     printf("%lu\n",res);
@@ -78,6 +93,7 @@ int main(void)
     res = hash_string("abcde",HASH_0);
     printf("%lu\n",res);
     */
+    CacheHashTable * hashTable = new_cache_hash_table();
     srand(time(0));
     int i = 0;
     //插入100W个数据测试
