@@ -16,7 +16,7 @@ typedef struct hash_table
 
 /*每个out item被插入完成或者get完成之后就会被释放
 *这样的结构会方便网络传输和节省空间
-* */
+*/
 typedef struct out_cache_item
 {
     /*过期时间*/
