@@ -1,5 +1,4 @@
-# easy_cache
-基于c语言的简单的缓存
+# easy_cache 基于c语言的简单的缓存。
 使用HASH_0作为哈希冲突时候的第二次对比指纹。分配hashtable位置时候使用的HASH_2
 t_main.c中测试了hash均匀性。分布较为均匀。
 考虑使用headsort进行lru管理？
@@ -12,5 +11,10 @@ t_main.c中测试了hash均匀性。分布较为均匀。
 #####编译hashTable：
     1. 进入hash_table 文件夹。
     2. gcc t_main.c cache_item.c hash_table.c -g -Wall
-    3. /a.out
+    3. /a.out。
     4. 注：t_main.c是测试文件。
+#####编译net测试方法：
+######TCP版本：
+	1. gcc tcp_server.c ../hash_table/hash_table.h ../hash_table/hash_table.c ../hash_table/cache_item.h ../hash_table/cache_item.c -lpthread -o tcp_server.out
+	2. gcc tcp_client.c ../hash_table/hash_table.c ../hash_table/hash_table.h ../hash_table/cache_item.h ../hash_table/cache_item.c -o tcp_client
+	3. ./tcp_server.out ./tcp_client.out。
