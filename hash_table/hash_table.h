@@ -3,11 +3,6 @@
 #include"hash_table_common.h"
 #include"cache_item.h"
 
-/*管理节点进行lru淘汰的堆结构*/
-typedef struct key_lru_head
-{
-	
-}KeyLruHeap;
 /*hash table 结构*/
 typedef struct hash_table
 {
@@ -72,4 +67,7 @@ int put(CacheHashTable *cache_hash_table_p,OutCacheItem *out_cache_item_p);
 
 /*在hashtable中取出一个key为传入的元素*/
 CacheItem * get(CacheHashTable *cache_hash_table_p,OutCacheItem *out_cache_item_p);
+
+/*使用fifo淘汰这个链表上的节点*/
+int FIFO_item(CacheItemList * item_list_p,int item_count);
 #endif

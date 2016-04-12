@@ -241,3 +241,16 @@ int get_out_time(OutCacheItem * out_cache_item_p)
     }
     return out_cache_item_p->out_time;
 }
+
+/*使用fifo淘汰这个链表上的节点
+  最先插入链表中的元素总是排在前面。
+*/
+int FIFO_item(CacheItemList * item_list_p,int item_count)
+{
+	if(!item_list_p)
+	{
+		DEBUG_TRACE("FILO 时候，链表为空");
+	}
+	/*链表的第一个节点是逻辑头部*/
+	
+}
