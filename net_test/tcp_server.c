@@ -12,20 +12,14 @@ void * net_call_back(void *params)
     RecvItem rec_data;
     while(recv(fd,&rec_data,sizeof(rec_data),0)!=0)
     {
-        printf("process a fd:%d key:%s value:%s at:%lu\n",fd,rec_data.key,rec_data.value,time(NULL));
+        printf("fd:%d key:%s value:%s at:%lu\n",fd,rec_data.key,rec_data.value,time(NULL));
     }
-    //int res = recv(fd,&rec_data,sizeof(rec_data),0);
-    //if(res<0)
-    //{
-    //    perror("recv error");
-    //    return (void*)-1;
-    //}
     return (void*)0;
 }
 int main(void)
 {
     int sockfd;
-    char *ip_addr = "192.168.0.103";
+    char *ip_addr = "127.0.0.1";
     short port = 8085;
 
     sockfd = socket(PF_INET,SOCK_STREAM,0);

@@ -9,7 +9,7 @@
 int main(void)
 {
     int sockfd;
-    char * ip_addr = "192.168.0.103";
+    char * ip_addr = "127.0.0.1";
     short port = 8085;
     sockfd = socket(PF_INET,SOCK_STREAM,0);
     int on=1;

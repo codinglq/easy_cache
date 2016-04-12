@@ -3,6 +3,11 @@
 #include"hash_table_common.h"
 #include"cache_item.h"
 
+/*管理节点进行lru淘汰的堆结构*/
+typedef struct key_lru_head
+{
+	
+}KeyLruHeap;
 /*hash table 结构*/
 typedef struct hash_table
 {

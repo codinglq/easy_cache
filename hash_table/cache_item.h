@@ -39,7 +39,7 @@ typedef struct cache_item_list
     CacheItem * cache_item_list_tail_p;
     /*这个冲突链表中的元素的总个数，不包含逻辑头*/
     int item_count;
-
+	
     unsigned long keys_hash0_xor_value;
 }CacheItemList;
 
@@ -84,4 +84,8 @@ void show_item(CacheItem *item_p);
 
 /*打印链表数据*/
 void show_cache_item_list(CacheItemList *item_head_p);
+
+/*判断一个帖子是否在这个链表中*/
+int key_is_in_list(CacheItemList * cache_item_list_p,CacheItem *item_p);
+
 #endif
