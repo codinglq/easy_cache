@@ -1,5 +1,4 @@
-# easy_cache
-基于c语言的简单的缓存
+# easy_cache 基于c语言的简单的缓存
 使用HASH_0作为哈希冲突时候的第二次对比指纹。分配hashtable位置时候使用的HASH_2
 t_main.c中测试了hash均匀性。分布较为均匀。
 #####待解决问题：
