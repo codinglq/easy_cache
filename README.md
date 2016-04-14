@@ -11,5 +11,5 @@ t_main.c中测试了hash均匀性。分布较为均匀。
 #####编译hashTable：
     1. 进入hash_table 文件夹。
     2. gcc t_main.c cache_item.c hash_table.c -g -Wall
-    3. /a.out
+    3. /a.out。
     4. 注：t_main.c是测试文件。
